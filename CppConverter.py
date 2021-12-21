@@ -13,6 +13,9 @@ def findValue(string):
             value+=string[i]
         i+=1
 
+def findFunctionName(string):
+    pass
+
 
 lines='''for i in range(len('dsd')):
     print(i)
@@ -29,13 +32,15 @@ check=r.readline()
 while check!='':
     if 'for' in check:
         i=3
-        var=findValue(check)
-        if 'len' in var:
-            var=var[3:]
+        IntValue=findValue(check)
+        while 'len' in IntValue:
+            IntValue=IntValue[3:]
+        IntValue=int(IntValue)
     if 'print' in check:
-        pass
-
+        StringValue=findValue(check)
+    if 'def' in check:
+        FunctionName=findFunctionName(check)
     check=r.readline()
 
-print(var)
+print(IntValue)
 r.close()
