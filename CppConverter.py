@@ -18,11 +18,11 @@ lines='''for i in range(len('dsd')):
     print(i)
 '''
 
-f = open('test.txt','w')
+f = open('SimpleInput.txt','w')
 f.writelines(lines)
 f.close()
 
-r = open('test.txt','r')
+r = open('SimpleInput.txt','r')
 
 CppText=''
 check=r.readline()
